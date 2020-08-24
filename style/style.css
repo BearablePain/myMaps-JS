@@ -1,0 +1,82 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       .container-text
+       {font-family: 'Roboto Mono', monospace;
+         height: 100%;
+       width: 100%;
+       justify-content: center;
+       align-items: center;
+       display: flex}
+      
+     .dud
+       {color: #757575;}
+       .container-text .text
+       {font-weight: 100;
+       font-size: 60px;
+       color: #FAFAFA;}
+
+       .fullscreen-bg {
+    overflow: hidden;
+    z-index: -100;
+   position: fixed;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+}
+ 
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.overlay {
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.overlay h1 {
+    text-align:center;
+    color:#fff;
+    font-size: 70px;
+    margin-top:17%;
+}
+
+       #map {
+        height: 100%;
+      }
+      
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: "Roboto", "sans-serif";
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      
+      #warnings-panel {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+      }
+
+
+      

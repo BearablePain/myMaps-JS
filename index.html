@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directions Service (Complex)</title>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2szSQM9UrlfbTu0yxsdS7jTOmZUavHAw&callback=initMap&libraries=&v=weekly"
+    defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  <script defer src="service/data.js"></script>
+  <script defer src="./public/js/create.js"></script>
+  <script defer src="./service/map.js"></script>
+  <script defer src ="/text.js"></script>
+</head>
+<body>
+  <div class="fullscreen-bg">
+    <div class="overlay"></div>
+    <video loop="" muted="" autoplay="" poster="video/plane.jpg" class="fullscreen-bg__video">
+      <source src="./public/img/4K Montreal Fly Bird's Eye View.mp4" type="video/mp4" />
+      <source src="video/plane.webm" type="video/webm" />
+    </video>
+  </div>
+
+  <video autoplay muted loop id="myVideo">
+    <source src="rain.mp4" type="video/mp4" />
+  </video>
+  <div id="map" hidden="true"></div>
+  &nbsp;
+ 
+
+  <div class="container " >
+    <div class="row">
+      <div class="col-sm">
+      <diV class = "container-text">
+          <div class="text">Привет</div>
+        </diV>
+      </div>
+    </div>
+    <h3 class="p-3 text-info mt-5 ">Пешком</h3>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/bar-tema-v-potapovskom-pereulke_8abc1_full-112270.jpg"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Пройтись по барам Питера</h5>
+            <p class="card-text">
+              Вы познакомитесь с лучшими барами Санкт-Петербурга
+            </p>
+            <a href="#" class="btn btn-primary" id="drinck">Гоу Бухать</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm ">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/strret.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Пройтись по закоулкам Питера</h5>
+            <p class="card-text">
+              Нетуристический маршрут для любителей найти, что-то новое
+            </p>
+            <a href="#" class="btn btn-primary" id="walk">Гоу гулять</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/muzeum.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Пройтись по музеям Питера</h5>
+            <p class="card-text">Познакомиться с культорой Санк-Петербурга</p>
+            <a href="#" class="btn btn-primary" id="smart">Гоу быть умнничкой</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="p-3 text-info mt-5 ">На машине</h3>
+    <div class="row ">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/river.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Проехаться по набережной</h5>
+            <p class="card-text">Классная речка НЕВА</p>
+            <a href="#" class="btn btn-primary" id="river">Гоу по-берегу</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/center.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title ">Проехаться по центру</h5>
+            <p class="card-text">
+              Похвастаться своей ласточкой среди мимокрокодилов
+            </p>
+            <a href="#" class="btn btn-primary" id="center">Гоу выебываться</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/tualet.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title ">Уехать в ебеня</h5>
+            <p class="card-text">
+              ээхх.. От чего так в России березы шумяяяяяят
+            </p>
+            <a href="#" class="btn btn-primary" id="will">Гоу кормить комаров</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="p-3 text-info mt-5 ">На велосипеде</h3>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/cycle.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">На спорте</h5>
+            <p class="card-text">Не умри брат</p>
+            <a href="#" class="btn btn-primary" id="sport">Гоу выше быстрей сильней</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="p-3 text-info mt-5 ">На общественном транспорте</h3>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./public/img/bus.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">До поликлиники</h5>
+            <p class="card-text">Уехать в лучшее место</p>
+            <a href="#" class="btn btn-primary" id="babylya">Гоу любить пожилых людей</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <form class="p-3 ml-5 mt-5 " id="create-form" >
+    <div class="form-group row">
+      <h4 class =  'text-info mt-5 text-warning'>Создать свой маршрут</h4>
+    </div>
+    <div class="form-group row" >
+      
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="nameRoute" placeholder="Название маршрута">
+      </div>
+    </div>
+    <div class="form-group row">
+      
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="titleRoute" placeholder="Описание маршрута">
+      </div>
+    </div>
+    <div class="form-group row" >
+   
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="inputStart" placeholder="Откуда">
+      </div>
+    </div>
+    <div class="form-group row">
+     
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="inputEnd" placeholder="Куда">
+      </div>
+    </div>
+    <fieldset class="form-group">
+      <div class="row">
+        <select class="form-control col-sm-3 ml-3" id="transport">
+          <option value='driving'>На машине</option>
+          <option value='walking'>Пешком</option>
+          <option value='cycle'>На Велосипеде</option>
+          <option value='bus'>На общественном транспорте</option>
+        </select>
+
+      </div>
+      </div>
+      </div>
+    </fieldset>
+    <!-- <div class="form-group row">
+      <div class="col-sm-2">Checkbox</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div> -->
+    <div class="form-group row">
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary" id="btnForm">Создать</button>
+      </div>
+    </div>
+  </form>
+  <h3 class="p-3 text-info mt-5 ">Мои маршруты</h3>
+  <div class="row" id="myRoute">
+  </div>
+
+  <script src="./service/map.js"></script>
+  <div id="warnings-panel"></div>
+
+</body>
+
+</html>
